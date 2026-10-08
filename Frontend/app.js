@@ -1,4 +1,6 @@
-const API_ROOT = window.MOVIE_API_URL || "http://localhost:3000/api/ai";
+
+const API_ROOT = window.MOVIE_API_URL || "https://movie-recommendation-system-2tze.onrender.com/api/ai"
+//|| "http://localhost:3000/api/ai";
 const INDIAN_MOVIES = new Set([
   "3 Idiots",
   "Dangal",

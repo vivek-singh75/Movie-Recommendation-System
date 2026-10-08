@@ -9,6 +9,7 @@ embeddingRouter.get("/movies", (req, res) => {
 });
 
 embeddingRouter.get("/vector" , embeddingController.createVector)
+
 embeddingRouter.post("/vector", embeddingController.createVector)
 
 
