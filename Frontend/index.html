@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#11110f" />
+    <meta
+      name="description"
+      content="Find your next favorite film with smart, story-driven movie recommendations."
+    />
+    <title>Reel Good — Find your next favorite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Reel Good home">
+          <span class="brand-mark" aria-hidden="true">r</span>
+          <span>reel<span class="brand-light">good</span></span>
+        </a>
+        <a class="topbar-note" href="#library">Your next favorite is in here <span>↘</span></a>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> A little less scrolling, a lot more watching</p>
+            <h1 id="hero-title">Find a film<br />that <em>feels right.</em></h1>
+            <p class="hero-description">
+              Pick a movie you love. We’ll find the stories that stay with you in the same way.
+            </p>
+            <a class="hero-link" href="#library">Explore the collection <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-glow"></div>
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-ticket">
+              <span class="ticket-kicker">TONIGHT’S PICK</span>
+              <span class="ticket-star">✳</span>
+              <span class="ticket-caption">A good story<br />is never far away.</span>
+              <span class="ticket-number">RG — 001</span>
+            </div>
+            <span class="hero-spark spark-one">✳</span>
+            <span class="hero-spark spark-two">✴</span>
+          </div>
+          <div class="hero-bottom">
+            <span><span class="status-dot"></span> STORIES, HAND-PICKED BY YOU</span>
+            <span id="collection-count">Loading the collection…</span>
+          </div>
+        </section>
+
+        <section class="library-section" id="library" aria-labelledby="library-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow section-eyebrow">THE COLLECTION</p>
+              <h2 id="library-title">What are you <em>in the mood for?</em></h2>
+            </div>
+            <label class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="movie-search" type="search" placeholder="Search a movie…" autocomplete="off" />
+              <span class="search-shortcut" aria-hidden="true">⌘ K</span>
+            </label>
+          </div>
+
+          <div class="filter-row" role="group" aria-label="Filter movies">
+            <button class="filter-chip is-active" data-filter="all" type="button" aria-pressed="true">All films</button>
+            <button class="filter-chip" data-filter="international" type="button" aria-pressed="false">Indian cinema</button>
+            <span class="filter-count" id="visible-count"></span>
+          </div>
+
+          <div class="movie-grid" id="movie-grid" aria-live="polite">
+            <div class="loading-state"><span class="loader"></span><span>Setting the scene…</span></div>
+          </div>
+          <p class="empty-state" id="empty-state" hidden>No films match that search. Try another title.</p>
+        </section>
+
+        <section class="recommendations" id="recommendations" aria-labelledby="recommendation-title" hidden>
+          <div class="recommendation-header">
+            <div>
+              <p class="eyebrow section-eyebrow">BECAUSE YOU LOVED IT</p>
+              <h2 id="recommendation-title">If you liked <em id="selected-title">this film</em>…</h2>
+            </div>
+            <button class="close-detail" id="close-detail" type="button" aria-label="Close recommendations">×</button>
+          </div>
+
+          <article class="selected-movie" id="selected-movie"></article>
+
+          <div class="similar-heading">
+            <h3>Your next <em>good watch.</em></h3>
+            <span>Picked for your kind of story</span>
+          </div>
+          <div class="similar-grid" id="similar-grid" aria-live="polite"></div>
+          <p class="recommendation-error" id="recommendation-error" role="status" hidden></p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a class="brand footer-brand" href="#">
+          <span class="brand-mark" aria-hidden="true">r</span>
+          <span>reel<span class="brand-light">good</span></span>
+        </a>
+        <span>Made for the love of a good story.</span>
+        <a class="back-top" href="#">BACK TO TOP ↑</a>
+      </footer>
+    </div>
+  </body>
+</html>

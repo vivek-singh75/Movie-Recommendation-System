@@ -3,7 +3,7 @@ class MovieData {
         this.title = title;
         this.description = description;
     }
-
+ 
     getTitle() {
         return this.title;
     }
